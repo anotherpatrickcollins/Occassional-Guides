@@ -1,0 +1,216 @@
+
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="keywords" content="Denver, Tourism, Guides, Guidebooks, Best Of, Colorado">
+		<meta name="viewport" content="width=device-width">
+		<title>Occasional Guides</title>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/instafeed.min.js"></script>
+  		<script src="js/smooth-scroll.js"></script>
+  		<script>
+    		$(document).ready(function() {
+
+      		$('ul.mainnav a').smoothScroll();
+
+ 		     $('p.subnav a').click(function(event) {
+		        event.preventDefault();
+		        var link = this;
+		        $.smoothScroll({
+		          scrollTarget: link.hash
+		        });
+		      });
+
+		      $('#change-speed').on('click', function() {
+		        var $p1 = $('ul.mainnav a').first(),
+		            p1Opts = $p1.smoothScroll('options') || {};
+
+		        p1Opts.speed = p1Opts.speed === 1400 ? 400 : 1400;
+		        $p1.smoothScroll('options', p1Opts);
+		      });
+
+		      $('button.scrollsomething').click(function() {
+		        $.smoothScroll({
+		          scrollElement: $('div.scrollme'),
+		          scrollTarget: '#findme'
+		        });
+		        return false;
+		      });
+		      $('button.scrollhorz').click(function() {
+		        $.smoothScroll({
+		          direction: 'left',
+		          scrollElement: $('div.scrollme'),
+		          scrollTarget: '.horiz'
+		        });
+		        return false;
+		      });
+
+		    });
+
+		</script>		
+
+		<script type="text/javascript">
+		    var userFeed = new Instafeed({
+		        get: 'user',
+		        userId: 1745928054,
+		        accessToken: '1745928054.467ede5.be9f8bd41e36424a92976d096304743b',
+				limit: 6,
+				resolution: 'low_resolution',
+				  sortBy: 'most-liked',
+				  after: function () {
+				    var images = $("#instafeed").find('a');
+				    $.each(images, function(index, image) {
+				      var delay = (index * 75) + 'ms';
+				      $(image).css('-webkit-animation-delay', delay);
+				      $(image).css('-moz-animation-delay', delay);
+				      $(image).css('-ms-animation-delay', delay);
+				      $(image).css('-o-animation-delay', delay);
+				      $(image).css('animation-delay', delay);
+				    });
+				  },
+				  template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a>'
+				});
+		    userFeed.run();
+		</script>
+		
+
+</head>
+<body>
+
+
+<!--NAV-->
+<div class="nav">
+	<img src="images/logo.png"  />
+
+	<nav class="link"> 
+		<!-- <a href="www.occasionalguides.com/journal">JOURNAL</a> -->
+		<a href="#contact">CONTACT</a>
+		<a href="#stockists">STOCKISTS</a>
+		<a href="#shop">SHOP</a>
+		<a href="#home">HOME</a>
+	</nav>
+
+
+</div>
+
+<!--CONTENT-->
+<section class="content" id="home">
+	<header>
+		<h1>These aren't your regular tourist guides.</h1>
+			<p>They are not about every little nook and cranny in the city. Nor are they about only the coolest and hippest places in town.<br /><br />	No, these guides are for the occasional explorers. The ones that live here and haven't found it all or the ones who are visiting and want something a bit more real than scratch-the-surface sightseeing.</p>
+	</header>
+	
+	<div id="instafeed">
+	</div>
+
+	<div class="divider">
+	</div>
+
+	<aside class="left">
+		<h4>
+		S<br />
+		H<br />
+		O<br />
+		P
+		</h4>
+	</aside>
+
+	<section class="shop" id="shop">
+		<h3>Occasional Sandwiches to eat in Denver</h3>
+		<br />
+		<p>With countless hours of sandwich eating under our ever-growing belts, we have decided to share the knowledge and wealth. Forget the endless quagmire of internet speculation, we're going to lay out 16 sandwiches all over our lovely city that will instantly make your life better. God bless the gluten.</p>
+		
+		<br />
+		<div class="square">
+		<a href="https://squareup.com/market/occasional-guides/occasional-sandwiches" class="sq-embed-item" > online</a>
+		<script src="https://cdn.sq-api.com/market/embed.js" charset="utf-8"></script>
+		</div>
+		
+	</section>
+
+	<div class="divider">
+	</div>
+
+	<aside class="left">
+		<h4>
+		S<br />
+		T<br />
+		O<br />
+		C<br />
+		K<br />
+		I<br />
+		S<br />
+		T<br />
+		S
+		</h4>
+	</aside>
+
+	<section class="stockists" id="stockists">
+		
+		<div class="leftCol">
+		<h3>Berkeley Supply</h3>
+		<p>4309 Tennyson St<br />Denver, CO 80212<br />(720) 445-6818</p>
+		<br />
+		<h3>Black Eye Coffee Shop</h3>
+		<p>3408 Navajo St<br/>Denver, CO 80211<br />&nbsp</p>
+		<br />
+		<h3>Fancy Tiger Clothing</h3>
+		<p>55 Broadway St<br/>Denver, CO 80203<br />(303) 282-6590</p>
+		<br />
+		<h3>Hazel & Dewey</h3>
+		<p>70 S Broadway<br />Denver, CO 80209<br />(303) 777-1500</p>
+		</div>
+		
+		<div class="rightCol">
+		<h3>Sub Rosa Mercantile</h3>
+		<p>2337 W 44th Ave<br />Denver, CO 80211<br />(303) 505-4297</p>
+		<br />
+		<h3>Proper Barber Shop</h3>
+		<p>3923 Tennyson St<br/>Denver, CO 80212<br />(303) 862-7537</p>
+		<br />
+		<h3>Vinh Xuong</h3>
+		<p>2370 W Alameda Ave<br />Denver, CO 80223<br />(303) 922-0999</p>
+		</div>
+
+	</section>
+
+	<div class="divider">
+	</div>
+
+
+	<aside class="left">
+		<h4>
+		C<br />
+		O<br />
+		N<br />
+		T<br />
+		A<br />
+		C<br />
+		T
+		</h4>
+	</aside>
+
+	<section class="contact" id="contact">
+		<h3>Work With Us</h3>
+		<br />
+		<p>We would love to work with you to create editorial for any occasion. We have written content for Beck's, The City of Melbourne, Tourism Victoria and more. Let's do something great.<br/><br/>
+		If you would like to get in touch, stock our guides or send us cute pictures of baby animals, contact us <a href="mailto:us@occasionalguides.com">here</a>.</p>
+	</section>
+
+	<div class="divider">
+	</div>
+
+
+</section>
+		
+<footer class="footer">
+	<p>&#169; 2015 Occasional Guides | Canter font by <a href="http://www.fontfabric.com">Fontfabric.com</a></p>
+	<a href="http://www.instagram.com/occasionalguides"><img src="images/instagram.png" width="28px" /></a>
+</footer>
+
+
+</body>
+</html>
